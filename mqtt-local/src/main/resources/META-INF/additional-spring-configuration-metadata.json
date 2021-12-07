@@ -1,0 +1,39 @@
+{
+  "properties": [
+    {
+      "name": "message-broker.mqtt.client-id",
+      "type": "java.lang.String",
+      "description": "Mqtt client id."
+    },
+    {
+      "name": "message-broker.mqtt.client-endpoint",
+      "type": "java.lang.String",
+      "description": "Mqtt client endpoint."
+    },
+    {
+      "name": "message-broker.mqtt.max-in-flight",
+      "type": "java.lang.String",
+      "description": "Max in flight message."
+    },
+    {
+      "name": "message-broker.producer.university-topic",
+      "type": "java.lang.String",
+      "description": "Description for message-broker.producer.university-topic."
+    },
+    {
+      "name": "message-broker.producer.big-message-topic",
+      "type": "java.lang.String",
+      "description": "Description for message-broker.producer.big-message-topic."
+    },
+    {
+      "name": "message-broker.producer.class-topic",
+      "type": "java.lang.String",
+      "description": "Description for message-broker.producer.class-topic."
+    },
+    {
+      "name": "down-stream.identities",
+      "type": "java.lang.String",
+      "description": "Description for down-stream.identities."
+    }
+  ]
+}

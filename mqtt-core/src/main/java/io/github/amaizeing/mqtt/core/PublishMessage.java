@@ -1,5 +1,6 @@
 package io.github.amaizeing.mqtt.core;
 
+import com.fasterxml.jackson.annotation.JsonProperty;
 import lombok.AccessLevel;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
@@ -14,16 +15,28 @@ import lombok.Setter;
 @AllArgsConstructor
 final class PublishMessage {
 
+  @JsonProperty("d")
   private String messageId;
-  private boolean zip;
+  @JsonProperty("c")
+  private boolean compress;
+  @JsonProperty("p")
   private byte[] payload;
+  @JsonProperty("s")
   private int messageSize;
 
-  private String combinedMessageId;
+  /**
+   * Message index in case fork message. Start from 0.
+   */
+  @JsonProperty("i")
   private int index;
+  @JsonProperty("t")
   private int totalMessages;
+  @JsonProperty("j")
+  private String combinedMessageId;
+  @JsonProperty("g")
+  private boolean ping;
 
-  boolean isSplit() {
+  boolean isFork() {
     return totalMessages > 1;
   }
 

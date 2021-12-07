@@ -15,8 +15,8 @@
 
   <modules>
     <module>mqtt-core</module>
-    <module>mqtt-producer</module>
-    <module>mqtt-consumer</module>
+    <module>mqtt-local</module>
+    <module>mqtt-cloud</module>
   </modules>
 
 </project>
