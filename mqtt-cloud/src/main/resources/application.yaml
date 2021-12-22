@@ -1,0 +1,12 @@
+server:
+  port: 8081
+message-broker:
+  mqtt:
+    max-in-flight: 1000
+    client-id: cloud-id-1
+    client-endpoint: 0.0.0.0:1883
+
+  consumer:
+    class-topic: local.cloud.class
+    university-topic: local.cloud.university
+    big-message-topic: local.cloud.big-message
