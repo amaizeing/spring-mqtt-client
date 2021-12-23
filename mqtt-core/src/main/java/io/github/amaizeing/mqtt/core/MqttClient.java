@@ -120,7 +120,16 @@ public final class MqttClient implements PubSubClient {
       }
     });
     log.info("Connecting to MQTT Server: {}", endPoint);
-    client.connect(options);
+    while (true) {
+      try {
+        val token = client.connect(options);
+        token.waitForCompletion();
+        break;
+      } catch (Exception ex) {
+        log.error("Exception while connecting to MQTT Broker", ex);
+      }
+    }
+
   }
 
   @Override
@@ -384,7 +393,7 @@ public final class MqttClient implements PubSubClient {
         log.info("Publishing message (fork) to topic: {} with messageId: {} and combinedId: {}",
             topic, message.getMessageId(), message.getCombinedMessageId());
       }
-      log.debug("Inflight message count: {}, buffer message count: {}",
+      log.info("Inflight message count: {}, buffer message count: {}",
           client.getInFlightMessageCount(), client.getBufferedMessageCount());
     }
   }
